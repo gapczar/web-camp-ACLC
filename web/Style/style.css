@@ -1,0 +1,69 @@
+.clearfix
+{
+	*zoom: 1px;
+}
+
+.clearfix:before,
+.clearfix:after {
+	display: table;
+	content: "";
+}
+
+.clearfix:after{
+	clear: both;
+}
+
+body
+{
+
+	font-size: 20px;
+	font-family: "Segoe UI", Arial, Helvetica, Impact;
+	width:960px;
+	margin: 0 auto;
+}
+
+nav
+{
+	background-color: #000;
+	margin: 0 auto;
+}
+
+ul
+{
+	list-style:none;
+	font-size: 30px;
+}
+
+nav ul li
+{
+	float: left;
+	margin-right: 15px;
+}
+
+nav li a
+{
+	color: #343434;
+	text-decoration: none;
+}
+
+.top-section
+{
+	text-align: center;
+}
+
+.content
+{
+	float: left;
+	width: 700px;
+}
+
+.side-bar
+{
+	float: right;
+	width: 240px;
+}
+
+footer
+{
+	text-align:center;
+}
