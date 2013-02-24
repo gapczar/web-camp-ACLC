@@ -13,15 +13,15 @@
 
 	<?php
 	if(!isset($_POST['btnSubmit'])){
-
-		echo '<div id="top">
+	?>
+		<div id="top">
 
 		</div>
 		<div id="main">
 
-			<form method="post" action="USERINFO.php">
+			<form method="POST" action="USERINFO.php">
 			<label>Username: </label>
-			<input type="text" size="50" name="userN">
+			<input type="text" size="50" name="user">
 			<br>
 			<label>Password: </label>
 			<input type="password" size="50" name="pass">
@@ -31,26 +31,28 @@
 			<input type="submit" value="Register" name="btnSubmit">
 			</form>
 		</div>
-	</body>';
+	</body>
 
-	
+	<?php
 	}
 	else{
 		$userN=$_POST['user'];
 		$passW=$_POST['pass'];
 		$email=$_POST['email'];
 		try{
-			$pdo=new PDO('mysql:dbname=mysql;host=localhost','root','root');
+			$conn=new PDO('mysql:dbname=Hackaton;host=localhost','root','root');
 			echo "Connection success";
+		
+			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="INSERT INTO UserAccounts(Username,Password,Email) VALUES('$userN','$passW','$email')";
+			$stmt = $conn->prepare($sql);
+			$ret=$stmt->execute();
+			if($ret==true){
+				echo "Registration success!";
+			}
 		}
 		catch(PDOException $ex){
 			die('Error: Could not connect:'.$ex->getMessage());
-		}
-		$sql="INSERT INTO UserAccounts(Username,Password,Email) VALUES($userN,$passW,$email)";
-		$stmt = $pdo->prepare($sql);
-				$ret=$stmt->execute();
-		if($ret===true){
-			echo "Registration success!";
 		}
 	}
 	?>
