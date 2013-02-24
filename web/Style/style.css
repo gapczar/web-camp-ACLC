@@ -11,6 +11,8 @@
 
 .clearfix:after{
 	clear: both;
+	margin-left:45%;
+	position:relative;
 }
 
 html
@@ -140,7 +142,16 @@ footer
 label
 {}
 
-input[type='text'], input[type='password'], input[type='submit']
-{
+img {
+	padding:20px;
+}
 
+.images
+{
+	margin-left: 200px;
+}
+
+input[type='submit']
+{
+	
 }

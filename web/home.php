@@ -64,7 +64,6 @@
  	$user=$_POST['user'];
 			$pass=$_POST['pass'];
 			$user=$_POST['user'];
-			$pass=$_POST['pass'];
 			try{
 				$pdo=new PDO('mysql:dbname=mysql;host=localhost','root','root');
 				echo 'success';
@@ -72,7 +71,7 @@
 			catch(PDOException $ex){
 				die('Error: Could not connect:'.$ex->getMessage());
 			}
-			$sql="SELECT*FROM UserAccounts Where Username=$user And Password=$pass";
+			$sql="SELECT*FROM UserAccounts Where Username='$user' And Password='$pass'";
 			if($result=$pdo->query($sql)){
 				while($row=$result->fetch()){
 					echo "Log-in Success!";
