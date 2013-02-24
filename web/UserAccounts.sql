@@ -28,3 +28,16 @@ CREATE TABLE `UserAccounts` (
   `hasVoted` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+
+--
+-- Table structure for table `Poll`
+--
+
+CREATE TABLE `Poll` (
+  `app_id` int(11) NOT NULL AUTO_INCREMENT,
+  `app_name` varchar(50) NOT NULL,
+  `app_count` int(11) NOT NULL,
+  PRIMARY KEY (`app_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
