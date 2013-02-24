@@ -1,7 +1,7 @@
 <?php
 	//check if the voter has voted already
 	try{
-		$pdo=new PDO('mysql:dbname=Hackaton;host=localhost',user='',password='');
+		$pdo=new PDO('mysql:dbname=Hackaton;host=localhost',user='root',password='root');
 	}
 	catch(PDOException $ex){
 		die('Error: Could not connect:'.$ex->getMessage);
