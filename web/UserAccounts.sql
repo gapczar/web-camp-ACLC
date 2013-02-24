@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 24, 2013 at 05:41 PM
+-- Generation Time: Feb 24, 2013 at 06:56 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 
@@ -24,5 +24,6 @@ CREATE TABLE `UserAccounts` (
   `UserID` int(5) NOT NULL AUTO_INCREMENT,
   `Username` varchar(50) NOT NULL,
   `Password` varchar(50) NOT NULL,
+  `Email` varchar(50) NOT NULL,
   PRIMARY KEY (`UserID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
