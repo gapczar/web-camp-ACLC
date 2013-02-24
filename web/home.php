@@ -5,11 +5,16 @@
 		<script src="/Scripts/script.js"></script>
 	</head>
 	<body>
+<?php
+		if(!isset($_POST['btnSubmit']))
+		{
+?>
 		<div id="blur">
 			<div id="modal">
-				<form action="login.php" method="post">
-					<label>Username: </label><input type="text" name="name"><br />
-					<label>Password: </label><input type="password" mame="pass">
+				<form action="" method="post">
+					<label>Username: </label><input type="text" name="user"><br>
+					<label>Password: </label><input type="password" mame="pass"><br>
+					<input type="submit" name="btnSubmit" value="Login">
 				</form>	
 			</div>
 		</div>
@@ -52,5 +57,31 @@
 				<p>Copyright &copy 2013 ACLC</p>
 			</footer>
 		</div>
+<?php
+ }
+ else
+ {
+ 	$user=$_POST['user'];
+			$pass=$_POST['pass'];
+			$user=$_POST['user'];
+			$pass=$_POST['pass'];
+			try{
+				$pdo=new PDO('mysql:dbname=mysql;host=localhost','root','root');
+				echo 'success';
+			}
+			catch(PDOException $ex){
+				die('Error: Could not connect:'.$ex->getMessage());
+			}
+			$sql="SELECT*FROM UserAccounts Where Username=$user And Password=$pass";
+			if($result=$pdo->query($sql)){
+				while($row=$result->fetch()){
+					echo "Log-in Success!";
+					header('location:apps.html');
+				}
+			}
+				
+}
+ 
+?>
 	</body>
 </html>

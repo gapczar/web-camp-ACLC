@@ -21,7 +21,7 @@
 		<?php
 		}else{
 			$user=$_POST['user'];
-			$pass="$_POST['pass']"
+			$pass=$_POST['pass'];
 			try{
 				$pdo=new PDO('mysql:dbname=Hackaton;host=localhost',user='root',password='root');
 			}
