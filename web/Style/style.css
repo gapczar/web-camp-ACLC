@@ -11,6 +11,8 @@
 
 .clearfix:after{
 	clear: both;
+	margin-left:45%;
+	position:relative;
 }
 
 .hide
@@ -156,8 +158,21 @@ label
 	width: 150px;
 }
 
-input[type='text'], input[type='password'], input[type='submit']
+img {
+	padding:20px;
+}
+
+.images
 {
+<<<<<<< HEAD
 	padding-left: 20px;
 	width: 150px;
+=======
+	margin-left: 200px;
+}
+
+input[type='submit']
+{
+	
+>>>>>>> 2005489ffbb3a15d43fd0ab26afaa08feba96fdd
 }

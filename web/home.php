@@ -71,8 +71,13 @@
 			catch(PDOException $ex){
 				die('Error: Could not connect:'.$ex->getMessage());
 			}
+<<<<<<< HEAD
 			$sql="SELECT*FROM UserAccounts Where Username=$user And Password=$pass";
 			$result=$pdo->query($sql);
+=======
+			$sql="SELECT*FROM UserAccounts Where Username='$user' And Password='$pass'";
+			if($result=$pdo->query($sql)){
+>>>>>>> 2005489ffbb3a15d43fd0ab26afaa08feba96fdd
 				while($row=$result->fetch()){
 					header('location:apps.php');
 				}

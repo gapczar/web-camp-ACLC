@@ -47,6 +47,10 @@
 		$email=$_POST['email'];
 		try{
 			$conn=new PDO('mysql:dbname=mysql;host=localhost','root','root');
+<<<<<<< HEAD
+=======
+			echo "Connection success";
+>>>>>>> 2005489ffbb3a15d43fd0ab26afaa08feba96fdd
 		
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql="INSERT INTO UserAccounts(Username,Password,Email) VALUES('$userN','$passW','$email')";
