@@ -17,28 +17,24 @@ body
 {
 	margin: 0;
 	padding: 0;
-	background: url(bg.png) repeat;
+	background: url('../bg.png');
 }
 
 .container
 {
 	background-color: #ccc;
-	width: 80%;
+	width: 70%;
 	margin: 0 auto;
 	padding: 0;
 	font-size: 20px;
 	font-family: "Segoe UI", Arial, Helvetica, Impact;
 	border: 1px solid # #ccc;
-	box-shadow: 10px 10px 1px #454545,
-	20px 20px 1px #565656,
-	-10px -10px 1px #454545,
-	-20px -20px 1px #565656;
 }
 
 nav
 {
 	text-align: center;
-	background: #fff;
+	background-color: #676767;
 	margin: 30px auto;
 }
 
@@ -64,7 +60,39 @@ nav li a
 .top-section
 {
 	text-align: center;
+	position: relative;
+}
+
+.head
+{
 	font-size: 50px;
+}
+
+#login
+{
+	position:absolute;
+	right: 0;
+	top: 10%;
+}
+
+#blur
+{
+	margin: 0;
+	padding: 0;
+	background-color: #000;
+	height: 100%;
+	width: 100%;
+	opacity: .8;
+	position: absolute;
+}
+
+#modal
+{
+	position: fixed;
+	height: 250px;
+	width: 250px;
+	background: #fff;
+	opacity: 1;
 }
 
 .content
@@ -79,8 +107,24 @@ nav li a
 	width: 43%;
 }
 
+.block, .block1
+{
+	width: 50px;
+}
+
+.block
+{
+	float: left;
+}
+
+.block1
+{
+	float: right;
+}
+
 footer
 {
+	margin-top: 30px;
 	background-color: #676767;
 	text-align:center;
 }
