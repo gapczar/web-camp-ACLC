@@ -1,35 +1,41 @@
-
-
 <html>
 	<head>
-	<style type="text/css">	
-		#main{
-
-		}
-		#body{}
-	</style>	
+		<link rel="stylesheet" type="text/css" href="/Style/style.css">
+		<script src="/Scripts/jquery-1.9.1.min.js"></script>
+		<script src="/Scripts/script.js"></script>
 	</head>
 	<body>
-
 	<?php
 	if(!isset($_POST['btnSubmit'])){
 	?>
-		<div id="top">
-
-		</div>
-		<div id="main">
-
-			<form method="POST" action="USERINFO.php">
+		<div class="container">
+			<header>
+				<section class="top-section">
+					<p class="head">Mobile Apps 'R Us!</p>
+				</section>
+				<nav class="clearfix">
+					<ul>	
+						<li><a href="home.php">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+			<div class="main clearfix">
+			<form method="POST" action="">
 			<label>Username: </label>
 			<input type="text" size="50" name="user">
 			<br>
 			<label>Password: </label>
 			<input type="password" size="50" name="pass">
+			<br>
 			<label>Email address</label>
 			<input type="text" size="50" name="email">
 			<br>
 			<input type="submit" value="Register" name="btnSubmit">
 			</form>
+		</div>
+		<footer class="clearfix">
+				<p>Copyright &copy 2013 ACLC</p>
+			</footer>
 		</div>
 	</body>
 
@@ -40,16 +46,13 @@
 		$passW=$_POST['pass'];
 		$email=$_POST['email'];
 		try{
-			$conn=new PDO('mysql:dbname=Hackaton;host=localhost','root','root');
-			echo "Connection success";
+			$conn=new PDO('mysql:dbname=mysql;host=localhost','root','root');
 		
 			$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			$sql="INSERT INTO UserAccounts(Username,Password,Email) VALUES('$userN','$passW','$email')";
 			$stmt = $conn->prepare($sql);
 			$ret=$stmt->execute();
-			if($ret==true){
-				echo "Registration success!";
-			}
+			header('location: apps.php');
 		}
 		catch(PDOException $ex){
 			die('Error: Could not connect:'.$ex->getMessage());

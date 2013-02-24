@@ -13,6 +13,11 @@
 	clear: both;
 }
 
+.hide
+{
+	overflow: hidden;
+}
+
 html
 {
 	margin: 0;
@@ -90,6 +95,15 @@ nav li a
 	width: 100%;
 	position: absolute;
 	z-index: 100;
+	overflow: hidden;
+}
+
+.close
+{
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	color: #fff;
 }
 
 #modal
@@ -98,7 +112,7 @@ nav li a
 	top: 50%;
 	margin: auto;
 	height: 100px;
-	width: 250px;
+	width: 300px;
 	background: #fff;
 	opacity: 1;
 }
@@ -138,9 +152,12 @@ footer
 }
 
 label
-{}
+{
+	width: 150px;
+}
 
 input[type='text'], input[type='password'], input[type='submit']
 {
-
+	padding-left: 20px;
+	width: 150px;
 }
